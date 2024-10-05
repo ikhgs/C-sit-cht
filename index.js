@@ -1,10 +1,14 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
 
-// Dossier public pour les fichiers statiques (HTML, CSS, JS)
+// Dossier public pour les fichiers statiques
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Servir le fichier HTML à la route de base "/"
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'chatbot.html'));
+});
 
 // Démarrer le serveur
 const PORT = process.env.PORT || 3000;
