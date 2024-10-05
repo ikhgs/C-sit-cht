@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Servir le fichier HTML à la route de base "/"
 app.get('/chatbot', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'chatbot.html','scripts.js','styles.css'));
+    res.sendFile(path.join(__dirname, 'public', 'chatbot.html'));
 });
 
 // Démarrer le serveur
